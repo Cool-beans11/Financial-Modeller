@@ -1,0 +1,383 @@
+MainWindow {
+    background-color: "#1F1F1F"
+}
+
+EntryScreen > QPushButton {
+    background-color: "#2a282d";
+    border-radius: 5px;
+    color: "#ffffff";
+    font-size: 12px;
+    padding: 5px;
+}
+
+EntryScreen > QPushButton:pressed {
+    background-color: "#505050";
+}
+
+ExistingUsers > QListWidget {
+    background-color: "#2a282d";
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+TickerList > QLineEdit {
+    border-radius: 3px;
+    color: #dcdcdc;
+    background-color: #2f2f2f;
+    border: 1px solid #6e6e6e
+}
+
+UserInputForm > QLineEdit {
+    border-radius: 3px;
+    color: #dcdcdc;
+    background-color: #2f2f2f;
+    border: 1px solid #6e6e6e
+}
+
+ButtonGroup > QPushButton {
+    background-color: "#2a282d";
+    border-radius: 5px;
+    color: "#ffffff";
+    font-size: 12px;
+    padding: 5px;
+}
+
+ButtonGroup > QPushButton:pressed {
+    background-color: "#505050";
+}
+
+
+QLabel {
+    color: "#ffffff";
+    height: 10px
+}
+
+StackSwitcher {
+    background-color: "#2a282d";
+    border-radius: 5px;
+}
+
+StackSwitcher > QPushButton {
+    height: 60px;
+    background-color: "transparent";
+    color:"#ffffff"
+}
+
+ChartTypeButtons {
+    background-color: "#2a282d";
+    border-radius: 5px;
+}
+
+StackSwitcher > QPushButton:pressed {
+    background-color: "#505050"
+}
+
+QLabel#MetricLabel {
+    font-size: 25px;
+}
+
+QLabel#About {
+    font-size: 25px;
+}
+
+Loading {
+    background-color: "#1F1F1F"
+}
+
+InfoModule#InfoModule2 > QLabel {
+    font-size: 15px;
+}
+
+
+InfoModule#InfoModule4 > QLabel {
+    font-size: 14px;
+}
+
+InfoModule#InfoModule4 > QLabel#Misc {
+    font-size: 25px;
+}
+
+InfoModule#InfoModule5 > QLabel#Performance {
+    font-size: 25px;
+}
+
+QPushButton#DeleteButton {
+    background-color: "transparent";
+    text-align: left;
+}
+ 
+QLabel#stockAbout {
+    font-size: 15px;
+}
+
+TransactionModule {
+    background-color: "#2a282d";
+    border-radius: 6px;
+}
+
+TransactionList {
+    background-color: "#2a282d"
+}
+
+TransactionModule > QLabel {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton {
+    background-color: "#ffffff";
+    border-radius: 3px;
+    padding: 3px;
+}
+
+StockList {
+    background-color: "#2a282d"
+}
+
+QScrollBar:vertical {
+    width: 6px;
+    border-radius: 3px;
+    background-color: #2a282d
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;           /* Hide the up/down arrow buttons */
+    background: transparent;
+}
+
+QScrollBar::handle:vertical {
+    background: #ccc;      /* Gray color */
+    border-radius: 3px;    /* Rounded corners */
+}
+
+QPushButton#popUpButton {
+    background: "#2a282d"
+}
+
+QPushButton#popUpButton:pressed {
+    background: "#55525a"
+}
+
+PopUpMenu {
+    background: "#2a282d";
+    border-radius: 6px
+}
+
+BuySellModule {
+    background-color: "#2a282d";
+    border-radius: 6px
+}
+
+NotEnoughStocks {
+    background-color: "#1F1F1F"
+}
+
+Error {
+    background: "#1F1F1F"
+}
+
+portfolioPerformance {
+    background-color: "#2a282d";
+    border-radius:5px
+}
+
+portfolioPerformance > QLabel{
+    font-size: 16px;
+}
+
+
+Transaction {
+    background-color: #3d3d3d;
+    border-radius: 5px;
+}
+
+Transaction > QLabel {
+    font-size: 13px;
+}
+
+PortfolioStockInfo {
+    background-color:  #2a282d;
+}
+
+QPushButton#portfolioOverview {
+    background-color: "#2a282d";
+}
+
+QPushButton#portfolioOverview:pressed {
+    background-color: "#2f2f2f";
+}
+
+PopUpMenu > QPushButton {
+    background: "transparent";
+    color: "#ffffff";
+    font-size: 23px;
+    text-align: left;
+    font-weight: bold;
+    border-top: 1px solid white;
+}
+
+PopUpMenu > QPushButton:hover {
+    color: "#c6c6c6";
+}
+
+
+
+QScrollArea {
+    border: none;
+}
+
+QScrollBar::add-page:vertical, 
+QScrollBar::sub-page:vertical {
+    background: none;      /* Remove background when clicking above/below handle */
+}
+
+BackButton {
+    qproperty-alignment: AlignCenter;
+
+}
+
+userInputField {
+    qproperty-alignment: AlignCenter;
+}
+
+ErrorDialog {
+    background-color: "#1F1F1F"
+}
+
+
+
+SuccessDialog {
+    background-color: "#1F1F1F"
+}
+
+DuplicateStock {
+    background-color: "#1F1F1F"
+}
+
+TickerList {
+    background-color: "#2a282d";
+    border-radius:5px
+}
+
+InfoModule {
+    background-color: "#2a282d";
+    border-radius:5px
+
+}
+
+InfoModule > QLabel {
+    font-size: 14px
+}
+
+BuySellModule > QLabel {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+BuySellModule > QLineEdit {
+    border-radius: 3px;
+    color: #dcdcdc;
+    background-color: #2f2f2f;
+    border: 1px solid #6e6e6e
+}
+
+BuySellModule > ReadOnlyDateTime {
+    border-radius: 3px;
+    color: #dcdcdc;
+    background-color: #2f2f2f;
+    border: 1px solid #6e6e6e
+}
+
+BuySellModule > QDateTimeEdit QAbstractSpinBox {
+    background-color: #2f2f2f;  /* Make space for the spinbox buttons */
+}
+
+
+BuySellModule > QComboBox {
+    color: #dcdcdc;
+    background-color: #2f2f2f;
+}
+
+BuySellModule > QComboBox QAbstractItemView {
+    background-color: #2f2f2f;  /* Light gray background */
+    selection-background-color: #a0a0a0;  /* Gray background for selected item */
+    color: #dcdcdc;  /* Text color */
+    border-radius: 2px;
+}
+
+BuySellModule > QComboBox QAbstractItemView::item {
+    padding: 3px;  /* Add some padding to menu items */
+    min-height: 12px;  /* Minimum height for menu items */
+}
+
+
+QPushButton#confirmTradeButton {
+    color: #6e6e6e;
+    background-color: #373737;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px;
+}
+QPushButton#confirmTradeButton:hover {
+    background-color: #4f4f4f;
+}
+QPushButton#confirmTradeButton:pressed {
+    background-color: #2f2f2f;
+}
+
+Ticker {
+    background-color: "#3d3d3d";
+    border-radius:5px
+}
+
+Ticker:hover {
+    background-color: "#555555";
+}
+
+QLabel#tickerSymbol {
+    font-size: 15px;
+    font-weight: "bold";
+}
+
+
+
+QLabel#tickerPrice {
+    font-size: 20px;
+}
+
+StockNotFound {
+    background-color: "#1F1F1F"
+}
+
+
+QPushButton#NoStocks {
+    text-align: left;
+    background-color: "transparent";
+    font-size: 10px;
+    color: "gray";
+}
+
+QPushButton#NoStocks:pressed {
+    color: "#cdcdcd"
+}
+
+ImportDialog {
+    background-color: "#1F1F1F"
+}
+
+timeFrameButtons {
+    background-color: "#2a282d";
+    border-radius: 5px;
+}
+
+timeFrameButtons > QPushButton {
+    background-color: "transparent";
+    border-radius: 5px;
+    color: '#ffffff';
+}
+timeFrameButtons >QPushButton:pressed {
+    background-color: "#505050";
+}
+
+
