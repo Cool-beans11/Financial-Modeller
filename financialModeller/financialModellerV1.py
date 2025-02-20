@@ -628,7 +628,10 @@ class timeFrameButtons(
                 removeWidget = self.layout.itemAt(children).widget()
                 removeWidget.setParent(None)
                 children -= 1
-        inceptionDate = datetime.datetime.fromtimestamp(inceptionDate)
+        try:
+            inceptionDate = datetime.datetime.fromtimestamp(inceptionDate)
+        except:
+            inceptionDate = datetime.datetime.fromtimestamp(inceptionDate / 1000.0)
         if inceptionDate > datetime.datetime.now() - relativedelta(weeks=1):
             self.layout.addWidget(self.oneDay)
             return
@@ -1813,36 +1816,36 @@ class MainWindow(QMainWindow):  # Main Application
             self.stockAbout, 1, 0
         )
         try:
-            self.stockWebsite = QLabel(f"Website:   {self.stockInfo["website"]}")
+            self.stockWebsite = QLabel(f"Website:   {self.stockInfo['website']}")
         except:
             self.stockWebsite = QLabel("Website:   NA")
         try:
-            self.stockIndustry = QLabel(f"Industry:   {self.stockInfo["industry"]}")
+            self.stockIndustry = QLabel(f"Industry:   {self.stockInfo['industry']}")
         except:
             self.stockIndustry = QLabel("Industry:   NA")
         try:
-            self.stockSector = QLabel(f"Sector:   {self.stockInfo["sector"]}")
+            self.stockSector = QLabel(f"Sector:   {self.stockInfo['sector']}")
         except:
             self.stockSector = QLabel("Sector:   NA")
         try:
             self.stockFullTimeEmployees = QLabel(
-                f"Full Time Employees:   {self.stockInfo["fullTimeEmployees"]}"
+                f"Full Time Employees:   {self.stockInfo['fullTimeEmployees']}"
             )
         except:
             self.stockFullTimeEmployees = QLabel("Full Time Employees:   NA")
         try:
-            self.stockType = QLabel(f"Stock Type:   {self.stockInfo["quoteType"]}")
+            self.stockType = QLabel(f"Stock Type:   {self.stockInfo['quoteType']}")
         except:
             self.stockType = QLabel("Stock Type:   NA")
         try:
             self.stockCurrency = QLabel(
-                f"Financial Currency:   {self.stockInfo["financialCurrency"]}"
+                f"Financial Currency:   {self.stockInfo['financialCurrency']}"
             )
         except:
             self.stockCurrency = QLabel("Financial Currency:   NA")
         try:
             self.stockEnterpriseValue = QLabel(
-                f"Enterprise Value:   {self.stockInfo["enterpriseValue"]}"
+                f"Enterprise Value:   {self.stockInfo['enterpriseValue']}"
             )
         except:
             self.stockEnterpriseValue = QLabel("Enterprise Value:   NA")
@@ -2128,9 +2131,14 @@ class MainWindow(QMainWindow):  # Main Application
             lifetimeGainLabel, 2, 1
         )
 
-        self.MainModule.ChartInfoModule.chart.timeFrameButtons.constructLayout(
-            self.stockInfo["firstTradeDateEpochUtc"]
-        )
+        try:
+            self.MainModule.ChartInfoModule.chart.timeFrameButtons.constructLayout(
+                self.stockInfo["firstTradeDateEpochUtc"]
+            )
+        except:
+            self.MainModule.ChartInfoModule.chart.timeFrameButtons.constructLayout(
+                self.stockInfo["firstTradeDateMilliseconds"]
+            )
 
     def switchStack(
         self, stackNumber, whichModule
@@ -2575,13 +2583,13 @@ class MainWindow(QMainWindow):  # Main Application
                 dtype={"Date": "DATETIME"},
             )
             priceHistoryOneWkInterval.sort_values("Date").to_sql(
-                f"{updateWidget.tickerSymbol.text().replace("-", "").replace(".", "")}OneWk",
+                f"{updateWidget.tickerSymbol.text().replace('-', '').replace('.', '')}OneWk",
                 self.CurrentSessionConn,
                 if_exists="replace",
                 dtype={"Date": "DATETIME"},
             )
             with open(
-                f"financialModeller\\SessionData\\{self.CurrentSessionName}\\{self.CurrentSessionName}-{updateWidget.tickerSymbol.text().replace("-", "").replace(".", "")}.pkl",
+                f"financialModeller\\SessionData\\{self.CurrentSessionName}\\{self.CurrentSessionName}-{updateWidget.tickerSymbol.text().replace('-', '').replace('.', '')}.pkl",
                 "wb",
             ) as f:
                 pickle.dump(newStockData.info, f)
@@ -2786,36 +2794,36 @@ class MainWindow(QMainWindow):  # Main Application
 
         # infoTab2
         try:
-            stockWebsite = QLabel(f"Website:   {stockInfo["website"]}")
+            stockWebsite = QLabel(f"Website:   {stockInfo['website']}")
         except:
             stockWebsite = QLabel("Website:   NA")
         try:
-            stockIndustry = QLabel(f"Industry:   {stockInfo["industry"]}")
+            stockIndustry = QLabel(f"Industry:   {stockInfo['industry']}")
         except:
             stockIndustry = QLabel("Industry:   NA")
         try:
-            stockSector = QLabel(f"Sector:   {stockInfo["sector"]}")
+            stockSector = QLabel(f"Sector:   {stockInfo['sector']}")
         except:
             stockSector = QLabel("Sector:   NA")
         try:
             stockFullTimeEmployees = QLabel(
-                f"Full Time Employees:   {stockInfo["fullTimeEmployees"]}"
+                f"Full Time Employees:   {stockInfo['fullTimeEmployees']}"
             )
         except:
             stockFullTimeEmployees = QLabel("Full Time Employees:   NA")
         try:
-            stockType = QLabel(f"Stock Type:   {stockInfo["quoteType"]}")
+            stockType = QLabel(f"Stock Type:   {stockInfo['quoteType']}")
         except:
             stockType = QLabel("Stock Type:   NA")
         try:
             stockCurrency = QLabel(
-                f"Financial Currency:   {stockInfo["financialCurrency"]}"
+                f"Financial Currency:   {stockInfo['financialCurrency']}"
             )
         except:
             stockCurrency = QLabel("Financial Currency:   NA")
         try:
             stockEnterpriseValue = QLabel(
-                f"Enterprise Value:   {stockInfo["enterpriseValue"]}"
+                f"Enterprise Value:   {stockInfo['enterpriseValue']}"
             )
         except:
             stockEnterpriseValue = QLabel("Enterprise Value:   NA")
